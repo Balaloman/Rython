@@ -28,7 +28,7 @@ def main():
         # print out rss feed contents
         for item in feed.feed:
             sg.theme('DarkGrey')
-            sg.popup(item.title, item.description)
+            sg.popup_scrolled(item.title," ", item.description, " ")
 
 
 # restart the script
