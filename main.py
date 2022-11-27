@@ -25,7 +25,6 @@ def main():
         except ValueError:
             sg.theme('DarkBrown4')
             sg.popup("Enter valid values!")
-            time.sleep(15)
         else:
             break
 
