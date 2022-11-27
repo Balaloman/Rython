@@ -52,8 +52,4 @@ def main():
 
     main_window()
 
-
-# restart the script
-if __name__ == '__main__':
-    main()
-    os.execv(sys.executable, ['python'] + [sys.argv[0]])
+main()
