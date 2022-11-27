@@ -12,9 +12,9 @@ def main():
         try:
             sg.theme('DarkGrey')
             # user inputs an url
-            user_url = sg.PopupGetText("Enter your URL: ")
+            user_url = sg.PopupGetText("Enter your URL: ", title='Rython RSS Reader')
             # user inputs an integer for amount of entries
-            user_limit = int(sg.PopupGetText("How many entries would you like to see? "))
+            user_limit = int(sg.PopupGetText("How many entries would you like to see? ", title='Rython RSS Reader'))
 
             # translating user entries for rss-parser
             rss_url = user_url
