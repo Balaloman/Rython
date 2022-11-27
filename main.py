@@ -20,23 +20,28 @@ def main():
         # rss-parser logic
         parser = Parser(xml=xml.content, limit=user_limit)
         feed = parser.parse()
-        # small exception that handles both the url and the integer value
+    # small exception that handles both the url and the integer value
     except ValueError:
         sg.theme('DarkBrown4')
         sg.popup("Enter valid values!")
 
     def main_window():
+        # window for reader output
         sg.theme('DarkGrey')
+        # layout for the window
         layout = [[sg.MLine(size=(80, 40), key='-Main-')],
                   [sg.B('View'), sg.B('Cancel')]]
 
         window = sg.Window('Rython RSS Reader', layout)
-
-        while True:  # Event Loop
+        # event loop for the main window
+        while True:
             event, values = window.read()
+            # cancel button logic
             if event in (None, 'Cancel'):
                 break
+            # view button logic
             if event == 'View':
+                # fetch and print from parser
                 for item in feed.feed:
                     window['-Main-'].print(item.title, " ", item.description, " ")
         window.close()
