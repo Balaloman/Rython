@@ -13,10 +13,9 @@ def main():
             user_url = sg.PopupGetText("Enter your URL: ", title='Rython RSS Reader')
             if user_url is None:
                 sys.exit()
-            # user inputs an integer for amount of entries, try except allows for cancel without error message
-            try:
-                user_limit = int(sg.PopupGetText("How many entries would you like to see? ", title='Rython RSS Reader'))
-            except:
+            # user inputs an integer for amount of entries
+            user_limit = int(sg.PopupGetText("How many entries would you like to see? ", title='Rython RSS Reader'))
+            if user_limit is None:
                 sys.exit()
             # translating user entries for rss-parser
             xml = get(user_url)
