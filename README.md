@@ -1,2 +1,2 @@
 # Rython
- A simple RSS reader made using Python.
+ A simple GUI RSS reader made using Python.
