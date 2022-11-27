@@ -8,10 +8,11 @@ import sys
 def main():
     # begin error handling
     try:
+        sg.theme('DarkGrey')
         # user inputs and url
-        user_url = input("Enter a valid URL: ")
+        user_url = sg.PopupGetText("Enter a valid URL: ")
         # user inputs an integer for amount of entries
-        user_limit = int(input("How many entries would you like to see? "))
+        user_limit = int(sg.PopupGetText("How many entries would you like to see? "))
 
         # translating user entries for rss-parser
         rss_url = user_url
@@ -20,15 +21,14 @@ def main():
         parser = Parser(xml=xml.content, limit=user_limit)
         feed = parser.parse()
         # small exception that handles both the url and the integer value
-    except ValueError as e:
+    except ValueError:
         sg.theme('DarkBrown4')
         sg.popup("Enter valid values!")
     # continue if everything is fine
     else:
         # print out rss feed contents
         for item in feed.feed:
-            sg.theme('DarkGrey')
-            sg.popup_scrolled(item.title," ", item.description, " ")
+            sg.popup_scrolled(item.title, " ", item.description, " ")
 
 
 # restart the script
