@@ -17,8 +17,7 @@ def main():
             user_limit = int(sg.PopupGetText("How many entries would you like to see? ", title='Rython RSS Reader'))
 
             # translating user entries for rss-parser
-            rss_url = user_url
-            xml = get(rss_url)
+            xml = get(user_url)
             # rss-parser logic
             parser = Parser(xml=xml.content, limit=user_limit)
             feed = parser.parse()
