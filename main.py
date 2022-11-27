@@ -24,11 +24,24 @@ def main():
     except ValueError:
         sg.theme('DarkBrown4')
         sg.popup("Enter valid values!")
-    # continue if everything is fine
-    else:
-        # print out rss feed contents
-        for item in feed.feed:
-            sg.popup_scrolled(item.title, " ", item.description, " ")
+
+    def main_window():
+        sg.theme('DarkGrey')
+        layout = [[sg.MLine(size=(80, 40), key='-Main-')],
+                  [sg.B('View'), sg.B('Cancel')]]
+
+        window = sg.Window('Rython RSS Reader', layout)
+
+        while True:  # Event Loop
+            event, values = window.read()
+            if event in (None, 'Cancel'):
+                break
+            if event == 'View':
+                for item in feed.feed:
+                    window['-Main-'].print(item.title, " ", item.description, " ")
+        window.close()
+
+    main_window()
 
 
 # restart the script
