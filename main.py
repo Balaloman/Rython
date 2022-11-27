@@ -10,7 +10,7 @@ def main():
     try:
         sg.theme('DarkGrey')
         # user inputs an url
-        user_url = sg.PopupGetText("Enter a valid URL: ")
+        user_url = sg.PopupGetText("Enter your URL: ")
         # user inputs an integer for amount of entries
         user_limit = int(sg.PopupGetText("How many entries would you like to see? "))
 
