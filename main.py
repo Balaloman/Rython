@@ -47,7 +47,8 @@ def main():
             if event == 'View':
                 # fetch and print from parser
                 for item in feed.feed:
-                    window['-Main-'].print(item.title, " ", item.description, " ")
+                    window['-Main-'].print(item.title, item.description)
+                    window['-Main-'].print("\n")
         window.close()
 
     main_window()
