@@ -25,7 +25,7 @@ def main():
         # small exception that handles both the url and the integer value
         except ValueError:
             sg.theme('DarkBrown4')
-            sg.popup("Enter valid values!")
+            sg.popup("Enter valid values!", title='Error!')
         else:
             break
 
