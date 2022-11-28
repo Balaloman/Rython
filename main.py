@@ -33,7 +33,7 @@ def main():
         # window for reader output
         sg.theme('DarkGrey')
         # layout for the window
-        layout = [[sg.MLine(size=(80, 40), key='-Main-', disabled = True)],
+        layout = [[sg.MLine(size=(80, 40), key='-Main-', disabled=True)],
                   [sg.B('View'), sg.B('Cancel')]]
 
         window = sg.Window('Rython RSS Reader', layout)
@@ -52,5 +52,6 @@ def main():
         window.close()
 
     main_window()
+
 
 main()
